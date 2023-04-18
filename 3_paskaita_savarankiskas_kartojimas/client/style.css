@@ -1,0 +1,35 @@
+
+div{
+    height: 320px;
+    width: 400px;
+    background-color: white;
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 50px;
+
+}
+
+h1{
+    text-align: center;
+}
+
+input{
+    border: none;
+}
+
+.border{
+    border-bottom: solid 2px rgb(48, 47, 47);
+    width: 400px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.button{
+    background-color: rgb(28, 28, 28);
+    width: 160px;
+    height: 30px;
+    padding: 5px;
+    color: white;
+
+}
