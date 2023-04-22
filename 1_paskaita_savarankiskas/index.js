@@ -17,6 +17,14 @@ app.get("/randomColors", (req, res) => {
     res.send(colors);  
 })
 
+/*app.get("/randomColors", (req, res) => {
+  const colors = [];
+  for (let i = 0; i < 5; i++) {
+    colors.push(casual.color_name);
+  }
+  res.send(colors);
+});*/
+
 
 app.get("/randomPlaces", (req, res) => {
     const randomObject = [

@@ -39,4 +39,18 @@ app.get("/stock", (req, res) => {
     res.send(stock);
 })
 
+//
+app.get("/prices/:minPrice/:maxPrice", (req, res) => {
+    const minPrice = Number(req.params.minPrice);
+    const maxPrice = Number(req.params.maxPrice);
+    const filterByPrice = data.filter(item => item.price >= minPrice && item.price <= maxPrice);
+    res.send(filterByPrice);
+})
+
+app.post("/add", (req, res) => {
+    const newProduct = req.body;
+    product.push(products);
+    res.send(products);
+})
+
 app.listen(port, () => console.log(`Server started on port ${port}...`));
