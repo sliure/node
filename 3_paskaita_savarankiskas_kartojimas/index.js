@@ -25,6 +25,31 @@ app.post("/form", (req, res) => {
     res.redirect('/results.html');
 })
 
+app.post("/login", (req, res) => {
+    // req.body = {email: "rokas@gmail.com", password: "rokas123"}
+    //
+    let foundedUser = form.find((user) => user.email === req.body.email);
+    // jeigu randa foundedUser = {email: "rokas@gmail.com", password: "rokas123", ...}
+    // jeigu neranda foundedUser = undefined
+    if (foundedUser !== undefined) {
+      // rado
+      let submittedPassword = req.body.password; // test
+      let storedPassword = foundedUser.password; // test
+      // test === test
+      // rokas123 === rokas123!
+      if (submittedPassword === storedPassword) {
+        res.send({ message: "Sekmingai prisijungete", approved: true });
+      } else {
+        res.send({ message: "Neteisingas slaptažodis", approved: false });
+      }
+    } else {
+      // nerado
+      res.send({
+        message: "Neteisingas el. paštas",
+        approved: false,
+      });
+    }
+  });
 app.listen(port, () => {
     console.log(`Server is runing on the ${port}`);
 });
