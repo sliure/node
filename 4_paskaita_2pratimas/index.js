@@ -48,19 +48,16 @@ app.get("/prices/:minPrice/:maxPrice", (req, res) => {
 })
 
 app.post("/item", (req, res) => {
-    const newProduct = {
-        id: 7, 
-        name: "Iphone", 
-        category: "phone", 
-        price: 600, 
-        stock: 4,
-    };
-    data.push(newProduct);
-    res.send(newProduct);
+    const newProduct = req.body;
+    const exist = data.some((product) => product.id === newProduct.id);
+    if(exist) {
+        res.send("product exists")
+    }
+    else{
+        data.push(newProduct);
+        res.send(req.body)
+    }
 })
 
-app.get("/item", (req, res) => {
-    res.send(data);
-});
 
 app.listen(port, () => console.log(`Server started on port ${port}...`));
