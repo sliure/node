@@ -113,9 +113,8 @@ app.get('/users/names/:fullName', async (req, res) => {
     const usersData = await connect
       .db('ManoDuomenuBaze')
       .collection('Users')
-      .find({ name: { $regex: new RegExp(fullName, 'i') } })
-      .toArray();
-    await connect.close();
+      .countDocuments({ name: { $regex: `${fullName}\\b` } });
+    await connect.close(); //patvarkyti
     res.send(usersData);
   } catch (error) {
     res.status(500).send(error);
