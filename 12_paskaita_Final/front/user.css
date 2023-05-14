@@ -34,6 +34,7 @@ body{
 }
 .cards{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .card{
@@ -45,7 +46,29 @@ body{
     text-align: left;
 }
 
-footer{
-    display: flex;
-    justify-content: center;
+body {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  footer {
+    margin-bottom: 4px;
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.sort{
+    text-align: center;
+}
+
+select{
+    margin-bottom: 20px;
 }

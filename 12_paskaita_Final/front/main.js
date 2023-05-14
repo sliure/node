@@ -28,13 +28,15 @@ const fetchData = () => {
       container.append(h1, div, deleteThis);
       card.append(container);
 
+      deleteThis.style.cursor = "pointer";
+      deleteThis.style.marginTop = "15px";
       container.style.backgroundColor = "white";
-      container.style.height = "150px";
+      container.style.height = "180px";
       container.style.width = "240px";
-      container.style.marginTop = "20px";
-      container.style.marginLeft = "20px";
-      container.style.paddingTop = "40px";
-      container.style.textAlign = "center";
+      container.style.marginTop = "10px";
+      container.style.textAlign = "left";
+      container.style.paddingLeft = "20px";
+      container.style.marginRight = "10px";
     });
   }
 };

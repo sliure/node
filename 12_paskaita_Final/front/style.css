@@ -35,6 +35,7 @@ body{
 
 .cards{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .card{
@@ -42,11 +43,24 @@ body{
     height: 150px;
     width: 240px;
     margin-top: 20px;
-    padding-top: 40px;
     text-align: center;
 }
 
-footer{
-    display: flex;
-    justify-content: center;
+body {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  footer {
+    margin-bottom: 4px;
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+a{
+    text-decoration: none;
+    color: black;
 }

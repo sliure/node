@@ -21,15 +21,31 @@ main{
     border: none;
     width: 180px;
     height: 30px;
+    cursor: pointer;
 }
 .white{
     border: none;
     width: 180px;
     height: 30px;
+    cursor: pointer;
 }
 .first{
     display: flex;
     justify-content: space-between;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+  }
+
+select, input{
+    margin-top: 20px;
+    border: none;
+    border-bottom: 0.5px grey solid;
+
 }
 
 body{
@@ -38,15 +54,34 @@ body{
     margin: 0;
 }
 
+
 .card{
     background-color: white;
-    height: 400px;
+    height: 300px;
     width: 1100px;
     padding: 40px;
-    text-align: left;
+
 }
 
-footer{
-    display: flex;
-    justify-content: center;
+body {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  footer {
+    margin-bottom: 4px;
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.buttons{
+    margin-top: 20px;
 }
