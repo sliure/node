@@ -64,3 +64,17 @@ a{
     text-decoration: none;
     color: black;
 }
+
+nav div a:hover{
+    color: rgb(98, 98, 237)
+}
+
+.delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .delete-button i {
+    color: red;
+  }

@@ -10,6 +10,15 @@ nav div{
     margin-left: 30px;
 }
 
+nav div a:hover{
+    color: rgb(98, 98, 237)
+}
+
+label{ 
+    margin-top: 20px;
+    font-size: 12px;
+}
+
 main{
     margin-left: 50px;
     margin-right: 50px;
@@ -54,10 +63,12 @@ body{
     margin: 0;
 }
 
-
+span{
+    color: red;
+}
 .card{
     background-color: white;
-    height: 300px;
+    height: 340px;
     width: 1100px;
     padding: 40px;
 

@@ -10,6 +10,10 @@ nav div{
     margin-left: 30px;
 }
 
+nav div a:hover{
+    color: rgb(98, 98, 237)
+}
+
 main{
     margin-left: 50px;
     margin-right: 50px;
@@ -41,6 +45,10 @@ form {
     margin: auto;
   }
 
+label{ 
+    margin-top: 20px;
+    font-size: 12px;
+}
 textarea, input{
     margin-top: 20px;
     border: none;

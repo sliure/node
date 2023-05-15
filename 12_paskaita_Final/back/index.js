@@ -14,6 +14,33 @@ app.use(cors());
 
 const client = new MongoClient(URI);
 
+app.get('/users', async (req, res) => {
+  try {
+    const { order } = req.query;
+    const con = await client.connect();
+    const sortQuery = { fname: order === 'desc' ? 1 : -1 };
+    const data = await con
+      .db(dbName)
+      .collection('Users')
+      .aggregate([
+        {
+          $lookup: {
+            from: 'Services',
+            localField: 'service_id',
+            foreignField: '_id',
+            as: 'info',
+          },
+        },
+        { $sort: sortQuery },
+      ])
+      .toArray();
+    await con.close();
+    res.send(data);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 app.get('/memberships', async (req, res) => {
   try {
     const con = await client.connect();
@@ -27,7 +54,9 @@ app.get('/memberships', async (req, res) => {
 
 app.get('/users/:order', async (req, res) => {
   try {
+    const { order } = req.params;
     const con = await client.connect();
+    const sortQuery = { fname: order === 'asc' ? -1 : 1 };
     const data = await con
       .db(dbName)
       .collection('Users')
@@ -40,6 +69,7 @@ app.get('/users/:order', async (req, res) => {
             as: 'info',
           },
         },
+        { $sort: sortQuery },
       ])
       .toArray();
     await con.close();
